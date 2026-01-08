@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topup Termurah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GEMINI STORE</div>
+        <button class="mode-toggle" onclick="toggleTheme()">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+    </nav>
+
+    <div class="container">
+        <div class="banner">
+            <img src="assets/img/banner.jpg" alt="Banner" onerror="this.src='https://via.placeholder.com/600x200?text=Banner+Game'">
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>1. Masukkan Data Akun</h3>
+            </div>
+            <div class="form-row">
+                <input type="number" id="userId" placeholder="User ID">
+                <input type="number" id="zoneId" placeholder="Zone ID">
+            </div>
+            
+            <select id="regionSelect" style="display:none;">
+                <option value="Global">Global</option>
+                <option value="Asia">Asia</option>
+            </select>
+
+            <button class="btn-check" onclick="cekNama()" id="btnCek">
+                <i class="fas fa-search"></i> Cek ID
+            </button>
+            
+            <span id="nickResult"></span>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h3>2. Pilih Item</h3></div>
+            <div class="grid-container">
+                <label class="radio-box">
+                    <input type="radio" name="produk" value="86 Diamonds" onclick="setHarga('Rp 20.000')">
+                    <div class="box-content">
+                        <span>86 DM</span><span class="item-price">Rp 20.000</span>
+                    </div>
+                </label>
+                <label class="radio-box">
+                    <input type="radio" name="produk" value="172 Diamonds" onclick="setHarga('Rp 40.000')">
+                    <div class="box-content">
+                        <span>172 DM</span><span class="item-price">Rp 40.000</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h3>3. Pembayaran</h3></div>
+            <div class="grid-container">
+                <label class="radio-box">
+                    <input type="radio" name="metode" value="DANA">
+                    <div class="box-content"><span>DANA / QRIS</span></div>
+                </label>
+                <label class="radio-box">
+                    <input type="radio" name="metode" value="GOPAY">
+                    <div class="box-content"><span>GOPAY</span></div>
+                </label>
+            </div>
+        </div>
+
+        <button class="btn-beli" onclick="kirimKeWA()">Beli Sekarang</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
